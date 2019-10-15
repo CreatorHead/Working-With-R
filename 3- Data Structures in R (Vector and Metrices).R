@@ -37,3 +37,5 @@ my_matrix2[1:2,1:2]
 my_matrix2[-3,-3]
 
 # Note: Matices can only work with on same basic type
+
+# How ever data frame is a good alternative
