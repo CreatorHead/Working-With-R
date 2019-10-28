@@ -55,3 +55,16 @@ summary(Orange)
 
 # Importing .csv file
 library('readr')
+Countires = read_csv("Countries+Population.csv")
+summary(Countires)
+Countires$`Country Name` = as.factor(Countires$`Country Name`)
+Countires$`Country Code` = as.factor(Countires$`Country Code`)
+summary(Countires)
+
+
+# Import excel documents
+install.packages('readxl')
+library('readxl')
+Countires_region = read_excel("Countries Region Mapping.xlsx")
+class(Countires_region)
+Countires_region = as.data.frame(Countires_region) #To Convert into a dataframe
