@@ -86,3 +86,38 @@ Big.And.Small.Countries
 View(Big.And.Small.Countries)
 
 summary(Big.And.Small.Countries)
+
+
+## Transforming 
+# You can create new columns or modify existing ones by applying transformation to them
+# Transformation can be adding, substracting, multiplication, dividing, powering etc...
+# But it can also be using functions such as log(), exp() etc...
+
+# Have total population expressed in millions
+Countries$Population.2017.Millions = Countries$Total.Population.2017 / 1000000
+Countries$Population.2017.Millions
+
+
+# Logarithm
+Countries$Random.Pop.Transform = log(Countries$Total.Population.2017)
+Countries$Random.Pop.Transform
+
+# Revert back with exponential
+Countries$Random.Pop.Transform = exp(Countries$Random.Pop.Transform)
+head(Countries$Random.Pop.Transform)
+
+
+### Sorting
+# In R, you can sort the dataset's rows based on a column's alphabetical order (character variables),
+# Or numerical order (numeric varibles)
+
+# You can apply an acending or decending direction to this order
+ 
+# Sort countries in acending order of population
+Countries = Countries[order(Countries$Total.Population.2017),]
+View(Countries)
+
+
+# Sort in decending order of population
+Countries = Countries[order(-Countries$Total.Population.2017),]
+View(Countries)
